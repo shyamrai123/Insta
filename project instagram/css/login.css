@@ -1,0 +1,103 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body
+{
+   
+    /* width: 20rem;
+    height:25rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border:3px solid; */
+    /* box-shadow: 1px 1px 3px red; */
+
+  
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     border:3px solid; 
+    box-shadow: 1px 1px 3px red; 
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.logo{
+    width: 13rem;
+    height: 12rem;
+}
+
+.feb
+{
+    border: 3px solid;
+    border-radius:10px;
+    width: 15rem;
+    background-color: rgb(62, 62, 240);
+    
+    padding: 0.3rem;
+}
+
+.inp
+{
+    width: 13.5rem;
+    padding:0.5rem;
+   
+    background-color: rgb(62, 62, 240);
+    border: none;
+
+
+}
+
+
+.rbtn
+{
+    width: 15rem;
+    background-color:rgb(40, 129, 245);
+    border-radius:10px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+input
+{
+    width: 15rem;  
+    border-radius: 5px ; 
+    padding: 0.1rem;
+    margin-bottom: 0.6rem;
+
+}
+
+.footer
+{
+    display: flex;
+    justify-content: center;
+    border: 3px solid;
+    padding: 1.5rem 3.2rem;
+    box-shadow: 1px 1px 3px rgb(6, 168, 238);
+}
+
+a{
+    text-decoration: none;
+    color:rgb(69, 14, 199);
+    padding: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.ank
+{
+    text-decoration: none;
+    color:rgb(241, 239, 246);
+    
+}

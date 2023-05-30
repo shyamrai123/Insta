@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/insta.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+     <style>
+   /* /////more offcanvas */
+      .moreoffcanvas
+      {
+        /* border: 2px solid ; */
+        background-color:white;  
+       cursor: pointer;
+       border-radius: 10px;
+       width:20%;
+       height:60%;
+       position: fixed; 
+       left: 1%;
+       top: 32%;
+       transform: translateY(650px);
+       transition: 1s;
+      
+       
+      }
+      .moreoffcanvas:hover{
+        transition: 0.3s;
+        /* background-color: black; */
+        color: white;
+      }
+
+       .moreoffcanvas.active{
+         transform: translateY(0px);
+       }
+
+    
+       .morecontent
+      {
+            cursor: pointer;
+      }
+      .more
+      {
+        cursor: pointer;
+      }
+
+  
+
+       .morecontent .log
+       {
+               border: 2px solid; 
+                background-color: white; 
+               border-radius:0 0 10px 10px;
+
+              padding: 1.5rem 5.5rem;
+              margin-bottom: 1rem;
+              position: absolute;
+              font-size: 1rem;
+              cursor: pointer;
+              
+              bottom: -4%;
+
+              
+       }
+
+       .set {
+          border: 2px solid; 
+         bottom: 21%;
+         font-size: 1rem;
+         border-radius: 10px 10px 0 0 ;
+         padding: 3.5rem 3.8rem;
+         column-gap: 0.3rem;
+         position: absolute;
+         cursor: pointer;
+
+         
+       }
+
+       .set div ion-icon{
+        margin-right: 1.5rem;
+        padding-top: 0.3rem;
+        }
+
+
+        .postimgdiv
+        {
+                position: relative;
+                color: white;
+
+
+        }
+
+        .postimgdiv div ion-icon
+        {
+          font-size: 2rem;
+          /* background-color: rgb(247, 12, 12); */
+        }
+
+        .i1 
+        {
+          position: absolute;
+          left: 5%;
+          opacity: 0;
+          
+
+        }
+
+        .i1:hover
+        {
+          position: absolute;
+          left: 9%;
+          opacity: 70%;
+          transition: 0.3s;
+          color:white;
+       
+
+          
+
+        }
+
+
+        .i2
+        {
+          position: absolute;
+          left: 35%;
+          opacity: 0;
+
+          
+
+        }
+
+        .i2:hover
+        {
+          position: absolute;
+          left: 40%;
+          opacity: 70%;
+          transition: 0.3s;
+          color:white;
+
+
+          
+
+        }
+
+
+        .i3
+        {
+          position: absolute;
+          left: 70%;
+          opacity: 0;
+          
+
+        }
+
+        .i3:hover
+        {
+          position: absolute;
+          left: 74%;
+          opacity: 70%;
+          transition: 0.3s;
+          color:white;
+
+          
+
+        }
+
+
+        /*  create modal */
+
+  .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  width: 40%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Additional styling for the close button */
+.modal-close {
+  float: right;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  right: 15%;
+  position: absolute;
+}
+
+
+#img-preview{
+  width: 15vw;
+  height: 15vh;
+  position: absolute;
+  top: 35%;
+  left: 26%;
+}
+
+.card
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.file-upload-container{
+  width: 10rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 30%;
+  bottom: 25%;
+  cursor: pointer;
+}
+
+#submit
+{
+  width: 10rem;
+  height: 2rem;
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+
+}
+
+.create
+{
+  position: absolute;
+  top: 10%;
+  left: 40%;
+}
+
+
+
+
+   
+ </style>
+
+
+</head>
+<body>
+
+   <section class="instamain"> 
+                  <div>
+               
+                    <div class="instaslider">
+
+                        <div class="instlogo"><img class="logo" src="https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png" alt="" class="logo"></div>
+                        
+                        <div><span><ion-icon name="home-outline"></ion-icon></span><a href="../html/home.html">Home</a></div>
+                        <div><span  id="canvasButton" ><ion-icon name="search-outline"></ion-icon>Search</span></div>
+                        <div><span  id="exploreButton"   ><ion-icon name="compass-outline"></ion-icon>Explore</span></div>
+                        <div><span  id="ReelsButton"   ><ion-icon name="musical-notes-outline"></ion-icon></ion-icon>Reels</span></div>
+                        <div><span  id="messagesButton" ><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Messages</span></div>
+                        <div><span  id="notificationButton"   ><ion-icon name="heart-outline"></ion-icon>Notifications</span></div>
+                        <div><span  onclick="createmodal()" ><ion-icon name="add-circle-outline"></ion-icon>create</span></div>
+                        <div><span><img src="https://www.shutterstock.com/image-vector/vector-illustration-hand-sketched-lettering-260nw-1772550587.jpg" alt="" class="profile"></span><b><a href="">profle</a></b></div>
+                        <div class="more"><span id="morebutton"><ion-icon name="menu-outline"></ion-icon>More</span></div>
+                   </div>
+                </div>
+                   <div class="profilesec">
+                    <div class="prfldiv">
+                       
+                        <div><img class="prfl" src="https://www.shutterstock.com/image-vector/vector-illustration-hand-sketched-lettering-260nw-1772550587.jpg" alt=""></div>
+                    <div class="profile_details">
+                     <div class="edit" >
+                         <div><b><a href="">shyam3384</a></b></div>
+                         <div><b><button class="editbtn">Edit profile</button></b></div>
+                         <div><ion-icon  name="cog-outline"></ion-icon></div>
+                     </div>
+                     <div class="edit">
+                         <div><a href="">3 posts</a></b></div>
+                         <div><a href="">195 followers</a></b></div>
+                         <div><a href="">115 following</a></b></div>
+                        
+                     </div>
+                     <div  >
+                         <div><b><a href="">Royâl Shyam Rai</a></b></div>
+                         <div>
+                          Love u my queen (amma🥰😘) <br>
+                          Attitude peaks ! <br>
+                          @urstrulymahesh fan 😎</div>
+                     </div>
+                    </div>
+                </div>  
+
+                <div class="storyadd">
+                           <div>
+                             <div><img class="highlightimg"  src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" alt="" ></div>
+                             <div>highlights</div>
+                           </div>
+                           <div>
+                             <div><img class="highlightimg"  src="https://images.pexels.com/photos/3593923/pexels-photo-3593923.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" ></div>
+                             <div>highlights</div>
+                           </div>
+                           <div>
+                             <div><button class="addbtn"><ion-icon name="add-outline"></ion-icon></button></div>
+                             <div>New</div>
+                           </div>
+                 </div>
+
+                 <div class="postdiv">
+                     <div class="posts">
+                          <div><a href=""><span><ion-icon name="add-circle-outline"></ion-icon>Posts</span></a></div>
+                          <div><a href=""><span><ion-icon name="bookmark-outline"></ion-icon>Saved</span></a></div>
+                          <div><a href=""><ion-icon name="pricetags-outline"></ion-icon>Tagged</span></a></div>
+                     </div>
+                     <div class="postimgdiv">
+                         <div><img class="postimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHgik-Ea6tCKx5cxCRrjglCzdneT8Cxtlu9w&usqp=CAU" alt=""></div>
+                         <!-- <div><img class="postimg" src="https://media.istockphoto.com/id/626349590/photo/keystone-dam-at-twilight.jpg?s=612x612&w=0&k=20&c=7VFvpqDSoI4gCQ9HI1LT91KSkInfqFlkX9EBguFFUz4=" alt=""></div>
+                         <div><img class="postimg" src="https://media.istockphoto.com/id/535457994/photo/river-dam-6-6.jpg?s=612x612&w=0&k=20&c=foF5RJ8tqeaElWza2t2CFqLHA9nx9UzcE_6tgmDtK78=" alt=""></div> 
+                           -->
+                      
+                         <div class="i1"    >
+                        <div> <ion-icon name="play-outline"></ion-icon>1</div>
+                        <div ><ion-icon name="chatbubble-outline"></ion-icon>2</div>
+                       </div>
+                        <div class="i2"    >
+                          <div ><ion-icon name="heart-outline"></ion-icon></ion-icon>11</div>
+                          <div><ion-icon name="chatbubble-outline"></ion-icon>22</div>
+                        </div>
+                          <div class="i3"    >
+                            <div ><ion-icon name="heart-outline"></ion-icon></ion-icon>11</div>
+                            <div><ion-icon name="chatbubble-outline"></ion-icon>22</div>
+                          </div>
+                     </div>
+                     
+                 </div>
+                   </div>
+
+   </section>
+
+</body>
+
+
+<script src="../js/insta.js"></script>
+<script>
+  //////create post/////
+ 
+  
+function createmodal(){
+
+  let modaldiv = document.createElement('div');
+  modaldiv = ''
+  modaldiv = `
+ 
+  
+  <div class="modal-overlay">
+  <span class="modal-close" onclick="closeModal()">&times;</span></div>
+  <div class="modal">
+  <div class="card">
+   <div class = "create"> create new posts</div> 
+  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSv12zsR0f_vwY04_loHy2jXobpZqGriqQh_5OW8YBEg0lsOVkj" id="img-preview" alt="" class="img">
+  <div>Drag photos and videos here</div>
+  <label class="file-upload-container" for="file-upload">
+      <input id="file-upload" type="file" style="display: none;">
+      select from computer
+  </label>
+  <button id="submit">Add IMage</button>
+  </div> 
+  </div>
+  `
+
+  document.querySelector('body').innerHTML += modaldiv;
+  // console.log('hi')
+  openModal()
+
+  
+  
+var baseurl = "https://api.cloudinary.com/v1_1/drh0jr0hn/image/upload";
+
+var urname = "lvfehxhb";
+
+var imgpreview = document.getElementById('img-preview');
+var upload1 = document.getElementById("file-upload");
+var submit = document.getElementById("submit");
+var postimg = document.querySelector('.postimg');
+
+submit.addEventListener('click', (event)=>{
+    console.log(event);
+      var file = upload1.files[0];
+      var formData = new FormData();
+
+      formData.append('file',file);
+
+      formData.append('upload_preset',urname);
+
+  
+    fetch(baseurl,{
+        
+        method :'POST',
+        body :formData
+    })
+    .then(res => res.json())
+    .then(function(data) {
+
+     console.log(data.url);
+
+var url = "https://students.codex.today/updateUser";
+
+fetch(url,{
+   method :'POST',
+  //  body :formData
+
+})
+.then(res =>res.json())
+.then(result =>{
+           console.log(result);
+          })
+
+
+
+    postimg.src = data.url;
+    }) .catch(function(err) {
+        console.error(err);
+    })
+
+
+})
+
+
+}
+
+
+function openModal() {
+  var modalOverlay = document.querySelector('.modal-overlay');
+  var modal = document.querySelector('.modal');
+  modalOverlay.style.display = 'block';
+  modal.style.display = 'block';
+  
+}
+
+function closeModal() {
+  var modalOverlay = document.querySelector('.modal-overlay');
+  var modal = document.querySelector('.modal');
+  modalOverlay.style.display = 'none';
+  modal.style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
+
+
+
+
+
+
